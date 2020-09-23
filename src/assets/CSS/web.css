@@ -62,6 +62,7 @@ nav ul li a {
 }
 .header-msg h1 {
 	color: #444;
+	vertical-align: middle;
 }
 .header-msg h1 label:nth-child(1) {
 	color: #5cd85c;
@@ -75,7 +76,7 @@ nav ul li a {
 	background-size: cover;
 }
 .contact img {
-	width: 60%;
+	max-width: 55%;
 }
 .contact h2 {
 	color: #5cd85c;
@@ -83,20 +84,6 @@ nav ul li a {
 .contact-form p {
 	font-size: 2em;
 	color: #5cd85c;
-}
-footer ul li {
-	border: none;
-	background-color: transparent;
-}
-footer ul li h5 {
-	color: black;
-}
-footer ul li a {
-	color: #616161;
-	text-decoration: none;
-}
-footer .copy-rights {
-	background-color: #028476;
 }
 .modal-content {
 	-webkit-border-radius: 20px !important;

@@ -7,9 +7,9 @@ import 'bootstrap/dist/js/bootstrap.min.js';
 import 'popper.js/dist/popper.js';
 import '@fortawesome/fontawesome-free/css/all.css';
 import '@fortawesome/fontawesome-free/js/all.js';
-import PerfectScrollbar from 'vue2-perfect-scrollbar';
-import 'vue2-perfect-scrollbar/dist/vue2-perfect-scrollbar.css';
-Vue.use(PerfectScrollbar);
+import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap-vue/dist/bootstrap-vue.css';
+
 Vue.config.productionTip = false;
 
 new Vue({

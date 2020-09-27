@@ -38,7 +38,7 @@
             <input
               type="submit"
               class="btn btn-sm float-right text-white"
-              style="background-color: #028476;"
+              style="background-color: #028476"
               value="Send"
             />
           </form>

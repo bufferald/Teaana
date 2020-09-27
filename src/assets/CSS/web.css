@@ -64,10 +64,10 @@ nav ul li a {
 	color: #444;
 	vertical-align: middle;
 }
-.header-msg h1 label:nth-child(1) {
+.header-msg h1 label:nth-child(odd) {
 	color: #5cd85c;
 }
-.header-msg h1 label:nth-child(2) {
+.header-msg h1 label:nth-child(even) {
 	color: #028476;
 }
 .contact {

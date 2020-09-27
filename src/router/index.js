@@ -2,7 +2,8 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 import Home from '../views/Home.vue';
 import Profile from '../views/Account.vue';
-import ProductList from '../views/Shop.vue';
+import Product from '../views/Shop.vue';
+import Cart from '../views/Cart.vue';
 
 Vue.use(VueRouter);
 
@@ -20,7 +21,12 @@ const routes = [
 	{
 		path: '/shop',
 		name: 'Shop',
-		component: ProductList,
+		component: Product,
+	},
+	{
+		path: '/cart',
+		name: 'Cart',
+		component: Cart,
 	},
 ];
 

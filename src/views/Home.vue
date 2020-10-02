@@ -1,6 +1,5 @@
 <template>
   <div>
-    <NavBar />
     <Login />
     <Register />
     <Landing />
@@ -11,7 +10,6 @@
   </div>
 </template>
 <script>
-import NavBar from "@/components/NavBar.vue";
 import Login from "@/components/Login.vue";
 import Register from "@/components/Register.vue";
 import Landing from "@/components/Landing.vue";
@@ -22,7 +20,6 @@ import Footer from "@/components/NavFooter.vue";
 export default {
   mounted() {},
   components: {
-    NavBar,
     Login,
     Register,
     Landing,

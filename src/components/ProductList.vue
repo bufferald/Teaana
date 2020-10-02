@@ -1,5 +1,5 @@
 <template>
-  <section class="container-fluid p-0">
+  <section class="container-fluid shop p-0">
     <div class="header-msg vh-auto w-100 p-4">
       <h1 class="font-weight-bold m-auto text-center">
         Indulge in
@@ -37,29 +37,54 @@
 
         <b-button variant="secondary" @click="searchProd()">Search</b-button>
       </b-form-group>
-      <p v-if="query">
-        {{ url }}
-      </p>
-      <!--   {{ name }} {{ price }} {{ image }} -->
-      <!-- localhost:3000/public/uploads/102938129038129038 -->
-      <div class="row">
-        /
+
+      {{ url }}
+
+      <div class="row d-flex justify-content-center">
         <b-card
           v-for="product in products"
           :key="product.id"
           img-alt="Image"
           img-top
           tag="article"
-          style="max-width: 20rem"
-          class="m-3 shadow"
+          style=""
+          class="m-3 border-0 items"
         >
-          <h3>{{ product.name }}</h3>
-          {{ product.imagePath }}
-          <figure>
-            <b-img :src="path + product.imagePath" fluid></b-img>
+          <p class="text-dark text-left font-weight-bold">{{ product.name }}</p>
+          <figure class="w-100" style="height: 170px">
+            <b-img
+              class="img img-fluid"
+              alt="Tea-ana-product"
+              :src="path + product.imagePath"
+              fluid
+            ></b-img>
           </figure>
-          {{ product.price }}
-          <b-button href="#" variant="success">Add to Cart</b-button>
+          <div class="d-flex justify-content-between">
+            <label class="text-dark border p-0">₱{{ product.price }}</label>
+
+            <b-button
+              variant="transparent"
+              id="show-btn"
+              @click="$bvModal.show('bv-modal-example')"
+              class="text-success btn btn-lg"
+            >
+              <i class="fas fa-shopping-cart"></i
+            ></b-button>
+          </div>
+          <b-modal id="bv-modal-example" :show.sync="$bvModal" hide-footer>
+            <template v-slot:modal-title>
+              {{ product.name }}
+            </template>
+            <div class="d-block text-center">
+              <h3>Hello From This Modal!</h3>
+            </div>
+            <b-button
+              class="mt-3"
+              block
+              @click="$bvModal.hide('bv-modal-example')"
+              >Close Me</b-button
+            >
+          </b-modal>
         </b-card>
       </div>
     </div>
@@ -79,8 +104,8 @@ export default {
       name: [],
       price: [],
       image: [],
-      path: "http://localhost:3000/uploads/",
-      url: "localhost:3000/v1/products",
+      path: "http://api.tea-ana.com/uploads/",
+      url: "http://api.tea-ana.com/",
       query: null,
       options1: [
         { value: null, text: "Categories" },
@@ -105,24 +130,27 @@ export default {
   methods: {
     async searchProd() {
       this.query = `?search=${this.search}&category=${this.category}&type=${this.type}&sort=${this.sort}`;
-      this.url += this.query;
+
       let res = await axios.get((this.url += this.query));
       this.products = res.data.data;
+      this.name = this.products.map((x) => x.name);
     },
     getImage(path) {
-      return `localhost:3000/v1/uploads/${path}`;
+      return `http://api.tea-ana.com/v1/uploads/${path}`;
     },
   },
   async mounted() {
     //load all products from api
     try {
-      let response = await axios.get("http://localhost:3000/v1/products");
+      let response = await axios.get(
+        "http://api.tea-ana.com/v1/products?page=1"
+      );
       this.products = response.data.data;
       //getting all name from
       this.name = this.products.map((x) => x.name);
       this.price = this.products.map((x) => x.id);
       this.image = this.products.map(
-        (x) => `localhost:3000/uploads/ ${x.image}`
+        (x) => `http://api.tea-ana.com/v1/uploads/ ${x.image}`
       );
     } catch (err) {
       console.log(err);
@@ -132,6 +160,19 @@ export default {
 </script>
 <!--SZ Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+.header-msg {
+  margin-top: 90px;
+}
+.items {
+  min-width: 250px;
+  max-width: 250px;
+  height: auto;
+  box-shadow: 0px 3px 5px rgb(0, 0, 0, 0.2);
+  border-radius: 15px;
+}
+.items img {
+  height: 100%;
+}
 .filters {
   margin-top: 5%;
 }

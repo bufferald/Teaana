@@ -1,4 +1,4 @@
-template {
+html {
 	scroll-behavior: smooth;
 }
 nav {
@@ -7,8 +7,8 @@ nav {
 	padding-right: 50px;
 }
 nav img {
-	max-width: 45px;
-	max-height: 45px;
+	max-width: 25px;
+	max-height: 25px;
 }
 .navbar-brand {
 	color: #5cd85c;
@@ -21,8 +21,17 @@ nav ul li a {
 	transition: color 0.3s ease;
 	color: white;
 	text-decoration: none;
+	font-weight: lighter;
 }
-#landing-content {
+nav ul li a:hover {
+	transition: color 0.3s ease;
+	color: #bebebe;
+	text-decoration: none;
+}
+.active {
+	color: #5cd85c;
+}
+.landing {
 	background-image: url('../Images/landing.jpg');
 	background-position: center/cover;
 	background-repeat: no-repeat;
@@ -30,7 +39,7 @@ nav ul li a {
 	background-size: cover;
 	height: 100vh;
 }
-#landing-content img {
+.landing img {
 	max-height: 500px;
 }
 
@@ -72,9 +81,17 @@ nav ul li a {
 	background-image: url('../Images/background-2.jpg');
 	background-attachment: fixed;
 	background-size: cover;
+	height: auto;
+	min-height: 80vh;
+	z-index: 2;
+	position: relative;
 }
-.contact img {
-	max-width: 55%;
+.content-info {
+	padding-top: 6%;
+	padding-bottom: 7%;
+}
+.content-info img {
+	max-width: 60%;
 }
 .contact h2 {
 	color: #5cd85c;
@@ -101,17 +118,43 @@ nav ul li a {
 	-webkit-appearance: none;
 	margin: 0;
 }
-.modal-content input[type='email'],
-input[type='number'],
-input[type='password'] {
+.login input[type='email'],
+.login input[type='number'],
+.login input[type='password'] {
 	border-top: none;
 	border-left: none;
 	border-right: none;
 }
-.modal-content input[type='submit'] {
+
+.profileeidt input[type='email'],
+.profileeidt input[type='number'],
+.profileeidt input[type='password'] {
+	border-top: none;
+	border-left: none;
+	border-right: none;
+	outline: none;
+}
+
+.register input[type='email'],
+.register input[type='number'],
+.register input[type='password'] {
+	border-top: none;
+	border-left: none;
+	border-right: none;
+}
+.additem select,
+/* .additem input[type='text'], */
+.additem input[type='email'],
+.additem input[type='number'],
+.additem input[type='password'] {
+	border: 2px solid #028476;
 	border-radius: 20px;
 }
-textarea:focus,
+.modal-content input[type='submit'] {
+	border-radius: 20px;
+	background-color: #028476;
+}
+/* textarea:focus,
 textarea.form-control:focus,
 input.form-control:focus,
 input[type='text']:focus,
@@ -124,20 +167,25 @@ input[type='number']:focus,
 [type='tel'].form-control:focus,
 [contenteditable].form-control:focus {
 	box-shadow: inset 0 -1px 0 #ddd;
-}
+} */
 .commercial {
 	position: relative;
 	scroll-snap-type: y proximity;
 
 	/* Reserve space for header plus some extra space for sneak peeking. */
 }
-.landing {
+.gallery {
 	height: 100vh;
 	background-color: gray;
 	color: white;
 	scroll-snap-align: start;
+
+	text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.4);
 }
 
+.landing img {
+	width: 65%;
+}
 .dots-list {
 	display: none;
 	list-style-type: none;
@@ -156,36 +204,26 @@ input[type='number']:focus,
 }
 
 .dot {
-	width: 15px;
-	height: 50px;
-	border-radius: 10%;
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
 	border: solid 2px whitesmoke;
-}
-.dot-1 {
+	box-shadow: 2px 4px 3px rgba(0, 0, 0, 0.3);
 }
 
 .dot-2 {
 	margin: 15px 0;
 }
 
-.dot-3 {
-}
-.doctsreached {
-	width: 10px;
-	height: 50px;
-	border-radius: 10%;
-}
 .dots-active {
 	background-color: #5cd85c;
-	animation: bounce 0.5s 1;
-	animation-direction: forwards;
 	opacity: 0.8;
 }
 .dots-inactive {
 	opacity: 0;
 }
 .bg-1 {
-	background-image: url('https://api.time.com/wp-content/uploads/2019/04/impossible-whopper-burger-king.jpg?quality=85&crop=0px%2C98px%2C1024px%2C536px&resize=1200%2C628&strip');
+	background-image: url('../Images/coffee.jpg');
 	background-attachment: fixed;
 	background-size: cover;
 }
@@ -195,7 +233,7 @@ input[type='number']:focus,
 	background-size: cover;
 }
 .bg-3 {
-	background-image: url('https://wallpapercave.com/wp/wp2370072.jpg');
+	background-image: url('../Images/c-wings.jpg');
 	background-attachment: fixed;
 	background-size: cover;
 }
@@ -211,4 +249,63 @@ input[type='number']:focus,
 
 /* Extra large devices (large desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) {
+}
+.footer {
+	height: auto;
+}
+.footer ul li,
+p {
+	border: none;
+	color: #777b7e;
+}
+.infos {
+	text-align: left;
+	max-width: 300px;
+}
+.infos ul li {
+	padding-left: 0%;
+	background-color: transparent;
+}
+.disclaimer {
+	text-align: left;
+	max-width: 300px;
+}
+.disclaimer ul li {
+	padding-left: 0%;
+	background-color: transparent;
+}
+.customercare {
+	text-align: left;
+	max-width: 300px;
+}
+
+.customercare ul li {
+	padding-left: 0%;
+	background-color: transparent;
+}
+.sociallink ul li {
+	display: inline;
+	font-size: 2em;
+	color: #444;
+}
+.sociallink {
+	text-align: left;
+}
+.copyright {
+	background-color: #028476;
+}
+::-webkit-scrollbar-track {
+	-webkit-box-shadow: inset 0 0 6px #444;
+	border-radius: 10px;
+	background-color: #f5f5f5;
+	position: absolute;
+}
+::-webkit-scrollbar {
+	width: 5px;
+	background-color: #f5f5f5;
+}
+::-webkit-scrollbar-thumb {
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+	background-color: #444;
 }

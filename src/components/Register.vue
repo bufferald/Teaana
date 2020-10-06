@@ -1,6 +1,6 @@
 <template>
 	<div
-		class="modal fade"
+		class="modal fade register"
 		id="Registermodal"
 		data-backdrop="static"
 		data-keyboard="false"
@@ -49,7 +49,7 @@
 						</div>
 						<input
 							type="submit"
-							class="float-right btn btn-sm btn-primary"
+							class="float-right btn btn-sm pl-3 pr-3 text-white"
 							value="Register"
 							style="background-color: #028476"
 						/>

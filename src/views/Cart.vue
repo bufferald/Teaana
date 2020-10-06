@@ -1,27 +1,30 @@
 <template>
-  <div>
-    <Login />
-    <CartList />
-    <Register />
-    <Footer />
-  </div>
+	<div>
+		<Login />
+		<CartList />
+		<Register />
+		<UpdateItem />
+		<Footer />
+	</div>
 </template>
 <script>
-import Login from "@/components/Login.vue";
-import Register from "@/components/Register.vue";
-import CartList from "@/components/Cartlist.vue";
-import Footer from "@/components/NavFooter.vue";
+import Login from '@/components/Login.vue';
+import Register from '@/components/Register.vue';
+import CartList from '@/components/Cartlist.vue';
+import UpdateItem from '@/components/UpdateItem.vue';
+import Footer from '@/components/NavFooter.vue';
 export default {
-  components: {
-    Login,
-    Register,
-    CartList,
-    Footer,
-  },
+	components: {
+		Login,
+		Register,
+		CartList,
+		UpdateItem,
+		Footer,
+	},
 };
 </script>
 <style scoped>
 .cart {
-  margin-top: 50px;
+	margin-top: 50px;
 }
 </style>

@@ -1,6 +1,6 @@
 <template>
 	<div
-		class="modal fade"
+		class="modal fade login"
 		id="Loginmodal"
 		data-backdrop="static"
 		data-keyboard="false"
@@ -45,29 +45,25 @@
 
 						<input
 							type="submit"
-							class="float-right btn btn-sm btn-primary"
+							class="float-right btn btn-sm pl-3 pr-3 text-white"
 							value="Login"
 							style="background-color: #028476"
 						/>
 					</form>
 				</div>
-				<div class="modal-footer d-flex justify-content-center">
+				<div class="modal-footer w-75 container d-flex justify-content-center">
 					<button
 						type="button"
-						class="btn text-white text-left w-75"
-						style="background-color: #4267b2"
+						class="btn text-white text-left"
+						style="background-color: #db4437; border-radius: 50%"
 					>
-						<i class="fab fa-facebook-square mr-1"></i>Sign-in with Facebook
+						<i class="fab fa-google"></i>
 					</button>
-					<button
-						type="button"
-						class="btn text-white text-left w-75"
-						style="background-color: #db4437"
-					>
-						<i class="fab fa-google-plus mr-1"></i>Sign-in with Google
-					</button>
+					<p>sign in with google</p>
 				</div>
 			</div>
 		</div>
 	</div>
 </template>
+
+<style scoped></style>

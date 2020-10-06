@@ -1,6 +1,6 @@
 <template>
 	<div
-		class="modal fade"
+		class="modal fade profileeidt"
 		id="EditProfilemodal"
 		data-backdrop="static"
 		data-keyboard="false"
@@ -9,7 +9,7 @@
 		aria-hidden="true"
 	>
 		<div class="modal-dialog modal-dialog-centered">
-			<div class="modal-content w-100 mx-auto">
+			<div class="modal-content w-75 mx-auto">
 				<div class="modal-header bg-light">
 					<h5 class="modal-title" id="staticBackdropLabel">Edit Account</h5>
 					<button

@@ -106,9 +106,10 @@
 									<td>09/11/2020</td>
 								</tr>
 								<tr class="mt-2 shadow-sm" style="border-radius: 20px">
-									<td>Milktea</td>
+																																<td>Milktea</td>
 									<td>₱149.00</td>
-									<td>09/11/2020</td>
+											
+													<td>09/11/2020</td>
 								</tr>
 								<tr class="mt-2 shadow-sm" style="border-radius: 20px">
 									<td>Milktea</td>

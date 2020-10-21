@@ -1,5 +1,6 @@
 html {
 	scroll-behavior: smooth;
+	scroll-snap-type: proximity;
 }
 nav {
 	background-color: #444;
@@ -7,8 +8,9 @@ nav {
 	padding-right: 50px;
 }
 nav img {
-	max-width: 25px;
-	max-height: 25px;
+	padding: 0%;
+	margin-left: 30px;
+	width: 50px;
 }
 .navbar-brand {
 	color: #5cd85c;
@@ -23,10 +25,25 @@ nav ul li a {
 	text-decoration: none;
 	font-weight: lighter;
 }
+
 nav ul li a:hover {
 	transition: color 0.3s ease;
 	color: #bebebe;
 	text-decoration: none;
+}
+ li.dropdown:hover > a, 
+ li.dropdown:hover > a:hover,
+ li.dropdown:hover > a:focus {
+    
+    color: #bebebe;
+}
+li.dropdown:hover > .dropdown-menu {
+	display: block;
+	padding: 0;
+}
+
+.dropdown-menu a:hover{
+	background-color: #5cd85c;
 }
 .active {
 	color: #5cd85c;
@@ -38,6 +55,8 @@ nav ul li a:hover {
 	background-attachment: fixed;
 	background-size: cover;
 	height: 100vh;
+	background-color: rgba(0, 0, 0, 0.5);
+	background-blend-mode: overlay;
 }
 .landing img {
 	max-height: 500px;
@@ -45,10 +64,6 @@ nav ul li a:hover {
 
 .modal-content {
 	border-radius: 20px;
-}
-.overlay {
-	background-color: rgb(0, 0, 0, 0.4);
-	height: 100vh;
 }
 .prod-menu div {
 	margin-top: 5%;
@@ -69,12 +84,12 @@ nav ul li a:hover {
 }
 .header-msg h1 {
 	color: #444;
-	vertical-align: middle;
+	align-content: center;
 }
-.header-msg h1 label:nth-child(odd) {
+.header-msg h1 strong:nth-child(odd) {
 	color: #5cd85c;
 }
-.header-msg h1 label:nth-child(even) {
+.header-msg h1 strong:nth-child(even) {
 	color: #028476;
 }
 .contact {
@@ -111,7 +126,7 @@ nav ul li a:hover {
 	-moz-border-top-left-radius: 20px !important;
 	-moz-border-top-right-radius: 20px !important;
 	border-top-left-radius: 20px !important;
-	border-top-right-radius: 20px !important;
+	border-top-right-radius: 20px 		!important;
 }
 .modal-content input[type='number']::-webkit-inner-spin-button,
 .modal-content input[type='number']::-webkit-outer-spin-button {
@@ -134,7 +149,7 @@ nav ul li a:hover {
 	border-right: none;
 	outline: none;
 }
-
+.register input[type='text'],
 .register input[type='email'],
 .register input[type='number'],
 .register input[type='password'] {
@@ -170,15 +185,13 @@ input[type='number']:focus,
 } */
 .commercial {
 	position: relative;
-	scroll-snap-type: y proximity;
+
 
 	/* Reserve space for header plus some extra space for sneak peeking. */
 }
 .gallery {
 	height: 100vh;
 	background-color: gray;
-	color: white;
-	scroll-snap-align: start;
 
 	text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.4);
 }
@@ -237,6 +250,20 @@ input[type='number']:focus,
 	background-attachment: fixed;
 	background-size: cover;
 }
+ .page-one ,.page-two, .page-three {
+	background-color: rgba(0, 0, 0 ,0.4);
+	max-width: 600px;
+	border-radius: 5px;
+}
+.info-about{
+	padding-top: 140px;
+	padding-bottom: 130px;
+}
+.info-about img{
+	width: 70%;
+}
+
+
 @media only screen and (min-width: 576px) {
 }
 
@@ -274,16 +301,26 @@ p {
 	padding-left: 0%;
 	background-color: transparent;
 }
+
+.disclaimer ul li a{
+	color: #777b7e;
+	text-decoration: none;
+	cursor: pointer;
+}
 .customercare {
 	text-align: left;
 	max-width: 300px;
 }
 
-.customercare ul li {
+.customercare ul li{
 	padding-left: 0%;
 	background-color: transparent;
 }
-.sociallink ul li {
+.customercare ul li a{
+	color: #777b7e;
+	text-decoration: none;
+}
+.sociallink ul li a{
 	display: inline;
 	font-size: 2em;
 	color: #444;
@@ -309,3 +346,19 @@ p {
 	-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
 	background-color: #444;
 }
+.google img {
+	height: 25px;
+}
+.blur {
+	background-color: rgba(0, 0, 0, 0.5);
+	background-blend-mode: overlay;
+	
+}
+
+.procceed-to-shop{
+	z-index: 6;
+	position: relative;
+	
+	
+}
+

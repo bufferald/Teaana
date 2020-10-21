@@ -4,31 +4,52 @@ import Home from '../views/Home.vue';
 import Profile from '../views/Account.vue';
 import Product from '../views/Shop.vue';
 import Cart from '../views/Cart.vue';
+import Gallery from "../components/Gallery.vue"
+import Contact from "../components/Contact.vue"
+import Landing from "../components/Landing.vue"
 
 Vue.use(VueRouter);
 
 const routes = [
 	{
-		path: '/home',
-		name: 'Home',
+		path: '/',
+		name: 'home',
 		component: Home,
 	},
 	{
+		path: '/banner-section',
+		component: Home, Landing
+	},
+	{
+		path: '/#about-section',
+
+		component: Home, Gallery
+
+	},
+	{
+		path: '/#contact-section',
+		name: 'contact',
+		component: Contact
+
+	},
+	{
 		path: '/profile',
-		name: 'Profile',
+		name: 'profile',
 		component: Profile,
 	},
 	{
 		path: '/shop',
-		name: 'Shop',
+		name: 'shop',
 		component: Product,
 	},
 	{
 		path: '/cart',
-		name: 'Cart',
+		name: 'cart',
 		component: Cart,
 	},
+
 ];
+
 
 const router = new VueRouter({
 	mode: 'history',

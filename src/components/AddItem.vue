@@ -1,10 +1,11 @@
 <template>
-  <div
+  <h3>maintenance</h3>
+  <!--  <div
     class="modal fade additem"
     id="exampleModalCenter"
     tabindex="-1"
     role="dialog"
-    aria-labelledby="addtocart-modal"
+    aria-labelledby="staticBackdropLabel"
     aria-hidden="true"
   >
     <div class="modal-dialog modal-lg modal-dialog-centered">
@@ -12,7 +13,7 @@
         <div class="modal-header bg-light">
           <h5
             class="modal-title text-dark font-weight-bold"
-            id="addtocart-modal"
+            id="staticBackdropLabel"
           >
             Add to cart
           </h5>
@@ -25,7 +26,7 @@
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
-        <div class="modal-body">
+        <div class="modal-body product-data">
           <form class="row">
             <div class="col-lg-7 border-right">
               <div class="input-group">
@@ -37,7 +38,7 @@
                   placeholder="Username"
                   aria-label="Username"
                   aria-describedby="basic-addon1"
-                  value="Cream Cheese Black Winter melon"
+                  v-model="input.name"
                 />
               </div>
 
@@ -191,5 +192,11 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
 </template>
+<script>
+export default {
+  methods: {},
+  //here put your other vue.js code
+};
+</script>

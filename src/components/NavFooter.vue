@@ -16,17 +16,31 @@
         <div class="col-lg-3 col-sm-6 disclaimer">
           <h4 style="color: #666666">Disclaimer</h4>
           <ul class="list-group">
-            <li class="list-group-item">Privacy Policy</li>
-            <li class="list-group-item">Refund Policy</li>
-            <li class="list-group-item">Terms and Condition</li>
+            <li class="list-group-item">
+              <a data-toggle="modal" data-target="#PrivacyPolicymodal"
+                >Privacy Policy</a
+              >
+            </li>
+            <li class="list-group-item">
+              <a data-toggle="modal" data-target="#RefundPolicymodal"
+                >Refund Policy</a
+              >
+            </li>
+            <li class="list-group-item">
+              <a data-toggle="modal" data-target="#TermsandConditions"
+                >Terms and Conditions</a
+              >
+            </li>
           </ul>
         </div>
 
         <div class="col-lg-3 col-sm-6 customercare">
-          <h4 style="color: #666666">Customer Care</h4>
+          <h4 style="color: #666666">Store</h4>
           <ul class="list-group">
-            <li class="list-group-item">Product</li>
-            <li class="list-group-item">Supply</li>
+            <li class="list-group-item">
+              <a href="/shop">Product</a>
+            </li>
+            <li class="list-group-item"><a href="/supply">Supply</a></li>
           </ul>
         </div>
 
@@ -34,18 +48,23 @@
           <h4 style="color: #666666">Social Media</h4>
           <p class>
             Follow us on social media to find out the latest updates in our
-            products
           </p>
           <div class="d-flex">
             <ul class="list-inline mx-auto justify-content-center">
               <li class="list-inline-item">
-                <i class="fab fa-facebook-square"></i>
+                <a class="nav-link" v-bind:href="linkfacebook"
+                  ><i class="fab fa-facebook-square"></i
+                ></a>
               </li>
               <li class="list-inline-item">
-                <i class="fab fa-twitter-square"></i>
+                <a class="nav-link" v-bind:href="linktwitter">
+                  <i class="fab fa-twitter-square"></i>
+                </a>
               </li>
               <li class="list-inline-item">
-                <i class="fab fa-instagram-square"></i>
+                <a class="nav-link" v-bind:href="linkinstagram">
+                  <i class="fab fa-instagram-square"></i>
+                </a>
               </li>
             </ul>
           </div>
@@ -62,3 +81,20 @@
     </div>
   </section>
 </template>
+<script>
+export default {
+  data() {
+    return {
+      linkfacebook: "https://www.facebook.com/TeaAna2",
+      linktwitter: "https://twitter.com/search?q=tea%20ana&src=typed_query",
+      linkinstagram: "https://www.instagram.com/teaana20/",
+    };
+  },
+};
+</script>
+<style lang="postcss" scoped>
+.footer {
+  position: relative;
+  z-index: 6;
+}
+</style>

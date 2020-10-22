@@ -35,10 +35,10 @@
         </div>
 
         <div class="col-lg-3 col-sm-6 customercare">
-          <h4 style="color: #666666">Store</h4>
+          <h4 style="color: #666666">Product</h4>
           <ul class="list-group">
             <li class="list-group-item">
-              <a href="/shop">Product</a>
+              <a href="/store">Store</a>
             </li>
             <li class="list-group-item"><a href="/supply">Supply</a></li>
           </ul>

@@ -17,14 +17,14 @@
         <li class="nav-item">
           <a class="nav-link mr-2" v-bind:href="shoplink">
             <i class="fas fa-store"></i>
-            store
+            Store
           </a>
         </li>
 
         <li class="nav-item">
           <a class="nav-link mr-2" v-bind:href="cartlink">
             <i class="fas fa-shopping-cart"></i>
-            cart
+            Cart
           </a>
         </li>
 
@@ -51,17 +51,15 @@
           </button>
         </li>
 
-        <li class="nav-item dropdown show">
-          <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown"
-            >name</a
+        <li class="nav-item dropdown show" v-if="data != null">
+          <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">
+            {{ data.user.email }}</a
           >
-          <div
-            class="dropdown-menu"
-            aria-labelledby="dropdownMenuButton fixed-top"
-          >
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" :href="profilelink">Profile</a>
-            <a class="dropdown-item" href="#" @click="logout()">Log out</a>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton ">
+            <a class="dropdown-item p-2" :href="profilelink">Profile</a>
+            <a class="dropdown-item p-2" :href="logoutlink" @click="logout()"
+              >Log out</a
+            >
           </div>
         </li>
       </ul>
@@ -106,18 +104,28 @@
 
 <script>
 import axios from "axios";
+//allows cookies
 axios.defaults.withCredentials = true;
-
 export default {
   data() {
     return {
-      cartlink: "/cart",
-      shoplink: "/shop",
       homelink: "/",
+      shoplink: "/store",
+      cartlink: "/cart",
       profilelink: "/profile",
+      logoutlink: "/",
+      data: null,
     };
   },
   methods: {
+    getProfile: async function () {
+      try {
+        const res = await axios.get("https://api.tea-ana.com/v1/auth/profile");
+        this.data = res.data;
+      } catch (error) {
+        console.error(error);
+      }
+    },
     logout: async function () {
       try {
         const res = await axios.get("https://api.tea-ana.com/v1/auth/logout", {
@@ -128,6 +136,9 @@ export default {
         console.error(error);
       }
     },
+  },
+  mounted() {
+    this.getProfile();
   },
 };
 </script>

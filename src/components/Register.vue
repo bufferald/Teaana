@@ -22,14 +22,14 @@
           </button>
         </div>
         <div class="modal-body p-4">
-          <form class="p-4" @submit.prevent="onSubmit">
+          <form class="p-4">
             <div class="form-group">
               <input
                 type="text"
                 class="form-control"
                 placeholder="Username"
                 id="username"
-                v-model="username"
+                v-model="name"
               />
             </div>
             <div class="form-group">
@@ -47,7 +47,7 @@
                 class="form-control"
                 placeholder="contact number"
                 id="contactno"
-                v-model="contactno"
+                v-model="contact"
               />
             </div>
             <div class="form-group">
@@ -60,20 +60,11 @@
               />
             </div>
 
-            <div class="form-group">
-              <input
-                type="password"
-                class="form-control"
-                placeholder="Confirm password"
-                id="confirm-password"
-                v-model="confirmPassword"
-              />
-            </div>
-
             <button
               type="submit"
               class="float-right btn btn-sm pl-3 pr-3 text-white"
               style="background-color: #028476"
+              @click="register()"
             >
               Register
             </button>
@@ -86,38 +77,32 @@
 
 
 <script>
+import axios from "axios";
+//allows cookies
+axios.defaults.withCredentials = true;
 export default {
   data() {
     return {
+      name: "",
       email: "",
-      /* age: null, */
-      contactno: "",
+      contact: "",
       password: "",
-      confirmPassword: "",
-      terms: false,
+      url: "https://api.tea-ana.com/v1/auth",
     };
   },
   methods: {
-    /* onAddHobby() {
-      const newHobby = {
-        id: Math.random() * Math.random() * 1000,
-        value: "",
-      };
-      this.hobbyInputs.push(newHobby);
-    }, */
-    /* onDeleteHobby(id) {
-      this.hobbyInputs = this.hobbyInputs.filter((hobby) => hobby.id !== id);
-    }, */
-    onSubmit() {
-      const formData = {
-        email: this.email,
-        username: this.username,
-        /* age: this.age, */
-        contactno: this.contactno,
-        password: this.password,
-        confirmPassword: this.confirmPassword,
-      };
-      console.log(formData);
+    register: async function () {
+      try {
+        const res = await axios.post(this.url + "/register", {
+          name: this.name,
+          email: this.email,
+          password: this.password,
+          contact: this.contact,
+        });
+        console.log(res.data);
+      } catch (error) {
+        console.error(error);
+      }
     },
   },
 };

@@ -53,12 +53,14 @@
               > -->
             </div>
 
-            <input
+            <button
               type="submit"
               class="float-right btn btn-sm pl-3 pr-3 text-white"
-              value="Login"
               style="background-color: #028476"
-            />
+              @click="login()"
+            >
+              Login
+            </button>
           </form>
         </div>
         <div class="modal-footer google">
@@ -76,20 +78,31 @@
 </template>
 
 <script>
+import axios from "axios";
+axios.defaults.withCredentials = true;
 export default {
   data() {
     return {
       email: "",
       password: "",
+      url: "https://api.tea-ana.com/v1/auth",
     };
   },
   methods: {
-    onSubmit() {
-      const formData = {
-        email: this.email,
-        password: this.password,
-      };
-      console.log(formData);
+    login: async function () {
+      try {
+        const res = await axios.post(
+          this.url + "/login",
+          {
+            email: this.email,
+            password: this.password,
+          },
+          { withCredentials: true }
+        );
+        console.log(res);
+      } catch (error) {
+        console.error(error);
+      }
     },
   },
 };

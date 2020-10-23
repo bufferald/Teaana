@@ -3,7 +3,8 @@
     <Login />
     <Register />
     <ProductList />
-    <AddItem />
+    <!--     <AddItem />
+ -->
     <Footer />
   </div>
 </template>
@@ -12,14 +13,15 @@ import Login from "@/components/Login.vue";
 import Register from "@/components/Register.vue";
 import ProductList from "@/components/ProductList.vue";
 import Footer from "@/components/NavFooter.vue";
-import AddItem from "@/components/AddItem.vue";
-export default {
+/* import AddItem from "@/components/AddItem.vue";
+ */ export default {
   components: {
     Login,
     Register,
     ProductList,
     Footer,
-    AddItem,
+    /*     AddItem,
+     */
   },
 };
 </script>

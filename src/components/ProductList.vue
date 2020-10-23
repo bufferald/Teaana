@@ -134,24 +134,38 @@
                 </div>
                 <div class="col-lg-5">
                   <div class="form-group">
-                    <select class="custom-select" id="inputGroupSelect01">
-                      <option selected>Size</option>
+                    <select
+                      class="custom-select"
+                      v-model="size"
+                      id="inputGroupSelect01"
+                    >
+                      <!-- <option selected>Size</option>
                       <option value="1">16 Oz</option>
                       <option value="2">22 Oz</option>
                       <option value="3">1 L</option>
+                     -->
+                      <option
+                        v-for="opt in sizeopt"
+                        :key="opt.text"
+                        :selected="text === opt.text"
+                      >
+                        {{ opt.text || "No Label" }}
+                      </option>
                     </select>
                   </div>
                   <div class="form-group">
                     <select
                       class="custom-select"
                       id="inputGroupSelect01"
-                      v-model="input.sugarlevel"
+                      v-model="sugarlevel"
                     >
-                      <option selected>Sugar Level</option>
-                      <option value="1">25%</option>
-                      <option value="2">50%</option>
-                      <option value="3">75%</option>
-                      <option value="3">100%</option>
+                      <option
+                        v-for="opt in sugarlevelopt"
+                        :key="opt.text"
+                        :selected="text === opt.text"
+                      >
+                        {{ opt.text || "No Label" }}
+                      </option>
                     </select>
                   </div>
                   <div class="form-group">
@@ -302,6 +316,20 @@ import axios from "axios";
 export default {
   data() {
     return {
+      size: "16 Ounces",
+      sugarlevel: "25 percent",
+      sizeopt: [
+        { text: "16 Ounces", value: 79 },
+        { text: "22 Ounces", value: 89 },
+        { text: "1 Liter", value: 119 },
+      ],
+      sugarlevelopt: [
+        { text: "25 percent", value: 0 },
+        { text: "50 percent", value: 0 },
+        { text: "75 percent", value: 0 },
+        { text: "100 percent", value: 0 },
+      ],
+
       //v-model for filters
       movetocartbtn: false,
 
@@ -368,6 +396,9 @@ export default {
         (this.input.price = product.price),
         (this.input.size = product.size),
         (this.input.sugarlevel = product.sugarlevel);
+    },
+    totalpricep: function () {
+      this.input.price + this.sizeopt.value;
     },
   },
 

@@ -2,7 +2,6 @@
   <div>
     <Login />
     <Register />
-    <Gallery />
     <Contact />
     <Footer />
     <PrivacyPolicy />

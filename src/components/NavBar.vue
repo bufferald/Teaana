@@ -18,7 +18,7 @@
       </ul>
     </div>
     <div class="d-flex flex-row order-2 order-lg-3">
-      <ul class="navbar-nav flex-row">
+      <!--  <ul class="navbar-nav flex-row">
         <li class="nav-item">
           <a class="nav-link mr-2" v-bind:href="cartlink">
             <i class="fas fa-shopping-cart"></i>
@@ -36,7 +36,7 @@
             Login
           </button>
         </li>
-        <li class="nav-item">
+  <li class="nav-item">
           <button
             type="button"
             class="btn btn-sm m-1 text-white"
@@ -58,8 +58,8 @@
               >Log out</a
             >
           </div>
-        </li>
-      </ul>
+        </li> 
+      </ul> -->
       <button
         class="navbar-toggler"
         type="button"
@@ -102,9 +102,9 @@
             </router-link></a
           >
         </li>
-        <li class="nav-item">
-          <a class="nav-link mr-2" v-bind:href="shoplink"> store </a>
-        </li>
+        <!--         <li class="nav-item">
+          <a class="nav-link mr-2" v-bind:href="shoplink"> Store </a>
+        </li> -->
       </ul>
     </div>
   </nav>
@@ -119,11 +119,11 @@ export default {
   data() {
     return {
       homelink: "/",
-      shoplink: "/store",
+      /*   shoplink: "/store",
       cartlink: "/cart",
       profilelink: "/profile",
       logoutlink: "/",
-      data: null,
+     */ data: null,
     };
   },
   methods: {

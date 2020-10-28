@@ -2,14 +2,14 @@
   <section class="footer bg-light">
     <div class="container p-5 bg-light">
       <div class="row">
-        <div class="col-lg-3 col-sm-6 infos">
+        <div class="col-lg-4 col-sm-6 infos">
           <h4 style="color: #666666">Contacts</h4>
           <ul class="list-group border-0">
             <li class="list-group-item">Sales@tea-ana.com</li>
             <li class="list-group-item">09270244269</li>
           </ul>
         </div>
-        <div class="col-lg-3 col-sm-6 disclaimer">
+        <div class="col-lg-4 col-sm-6 disclaimer">
           <h4 style="color: #666666">Disclaimer</h4>
           <ul class="list-group">
             <li class="list-group-item">
@@ -30,7 +30,7 @@
           </ul>
         </div>
 
-        <div class="col-lg-3 col-sm-6 customercare">
+        <!-- <div class="col-lg-3 col-sm-6 customercare">
           <h4 style="color: #666666">Product</h4>
           <ul class="list-group">
             <li class="list-group-item">
@@ -38,9 +38,9 @@
             </li>
             <li class="list-group-item"><a href="/supply">Supply</a></li>
           </ul>
-        </div>
+        </div> -->
 
-        <div class="col-lg-3 sociallink">
+        <div class="col-lg-4 sociallink">
           <h4 style="color: #666666">Social Media</h4>
           <p class>
             Follow us on social media to find out the latest updates in our
@@ -52,12 +52,7 @@
                   ><i class="fab fa-facebook-square"></i
                 ></a>
               </li>
-              <!--              <li class="list-inline-item">
-                <a class="nav-link" v-bind:href="linktwitter">
-                  <i class="fab fa-twitter-square"></i>
-                </a>
-              </li>
-  -->
+
               <li class="list-inline-item">
                 <a class="nav-link" v-bind:href="linkinstagram">
                   <i class="fab fa-instagram-square"></i>

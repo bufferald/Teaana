@@ -32,7 +32,8 @@ Vue.use(BootstrapVue);
 Vue.use(IconsPlugin);
 Vue.config.productionTip = false;
 
-
+import VueScrollTo from 'vue-scrollto'
+Vue.use(VueScrollTo)
 new Vue({
 	router,
 	render: h => h(App),

@@ -3,27 +3,28 @@ html {
 	scroll-snap-type: proximity;
 }
 nav {
-	background-color: #444;
-	padding-left: 50px;
-	padding-right: 50px;
-}
+	background-color: rgb(0, 0, 0, 0.85);
+	margin-bottom: 100px;
+	
+	}
+
+	
 nav img {
-	padding: 0%;
-	margin-left: 30px;
-	width: 50px;
+	width: 40px;
 }
 .navbar-brand {
 	color: #5cd85c;
 }
 nav li {
-	line-height: 20px;
-	margin: 1px;
+	align-self: center;	
 }
 nav ul li a {
 	transition: color 0.3s ease;
 	color: white;
 	text-decoration: none;
 	font-weight: lighter;
+	
+	
 }
 
 nav ul li a:hover {
@@ -81,6 +82,7 @@ li.dropdown:hover > .dropdown-menu {
 }
 .header-msg {
 	background-color: #f0f0f0;
+	padding: 80px  0px 80px 0px;
 }
 .header-msg h1 {
 	color: #444;
@@ -236,7 +238,7 @@ input[type='number']:focus,
 	opacity: 0;
 }
 .bg-1 {
-	background-image: url('../Images/coffee.jpg');
+	background-image: url('../Images/bg-milkteajar.jpg');
 	background-attachment: fixed;
 	background-size: cover;
 }
@@ -246,7 +248,7 @@ input[type='number']:focus,
 	background-size: cover;
 }
 .bg-3 {
-	background-image: url('../Images/c-wings.jpg');
+	background-image: url('../Images/bg-wings.jpg');
 	background-attachment: fixed;
 	background-size: cover;
 }

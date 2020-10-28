@@ -1,7 +1,7 @@
 <template>
-  <section id="contact-section" class="contact">
+  <section class="contact">
     <div class="container-fluid header-msg">
-      <h1 class="p-5 text-center font-weight-bold">
+      <h1 class="text-center font-weight-bold">
         We love to hear your <strong> Questions </strong> &
         <strong> Feedback</strong>
       </h1>
@@ -25,6 +25,7 @@
                   aria-describedby="Email Address"
                   placeholder="Email Address"
                   required
+                  v-model="email"
                 />
               </div>
               <div class="form-group">
@@ -34,11 +35,13 @@
                   rows="7"
                   placeholder="Compose a message here..."
                   required
+                  v-model="message"
                 ></textarea>
               </div>
 
               <input
-                type="submit"
+                type="button"
+                @click="contactUs"
                 class="btn btn-sm float-right pl-3 pr-3 text-white"
                 style="background-color: #028476; border-radius: 20px"
                 value="Send"
@@ -50,3 +53,29 @@
     </div>
   </section>
 </template>
+<script>
+import axios from "axios";
+export default {
+  data() {
+    return {
+      email: "",
+      message: "",
+    };
+  },
+  methods: {
+    contactUs: async function () {
+      //json format ay javascriot notation
+
+      const data = await axios.post("https://api.tea-ana.com/v1/auth/contact", {
+        email: this.email,
+        message: this.message,
+      });
+      console.log(data);
+      this.clear();
+    },
+    clear: function () {
+      (this.contactUs = true), (this.email = ""), (this.message = "");
+    },
+  },
+};
+</script>

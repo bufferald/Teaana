@@ -1,25 +1,6 @@
 <template>
-  <section class="container-fluid p-0" id="about-section">
+  <section class="container-fluid p-0">
     <div class="commercial">
-      <div class="container vh-auto">
-        <div class="row info-about">
-          <div class="col-lg-6 p-5 m-auto text-left order-2">
-            <h1>TEA ANA</h1>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            </p>
-
-            <p class="">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            </p>
-          </div>
-          <div class="col-lg-6 m-auto p-5 order-1">
-            <img class="img img-fluid" src="../assets/Images/4-products.png" />
-          </div>
-        </div>
-      </div>
       <div class="dots-wrapper d-flex align-items-center">
         <ul class="dots-list ml-auto" id="dotted">
           <a href="#pageone">
@@ -40,11 +21,11 @@
       >
         <div class="page-one mr-auto p-4">
           <h1 class="font-weight-bold text-left" style="color: #5cd85c">
-            Boost your energy
+            Natural flavored drinks
           </h1>
-          <h2 class="text-left text-white">Coffee Drink</h2>
+          <h2 class="text-left text-white">Fruit Juice Milktea</h2>
           <p class="text-left text-white">
-            Good vibe with a milk-based or brewed-based Cofee
+            A hydrated drink that purely extracted from natural fruits
           </p>
         </div>
       </div>
@@ -58,7 +39,7 @@
           </h1>
           <h2 class="text-left text-white">Takoyaki</h2>
           <p class="text-left text-white">
-            Just a bite of takoyaki will surely taste the seefood special of
+            Just a bite of takoyaki will surely taste the seafood special of
             Japanese Culture
           </p>
         </div>

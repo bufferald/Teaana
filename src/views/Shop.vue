@@ -3,8 +3,6 @@
     <Login />
     <Register />
     <ProductList />
-    <!--     <AddItem />
- -->
     <Footer />
   </div>
 </template>

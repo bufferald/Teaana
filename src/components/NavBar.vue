@@ -1,12 +1,17 @@
 <template>
-  <nav class="navbar navigation fixed-top navbar-expand-lg">
+  <nav
+    class="navbar navigation fixed-top navbar-expand-lg"
+    toggleable="lg"
+    type="dark"
+    variant="dark"
+  >
     <div class="navbar-brand">
       <ul class="navbar-nav">
         <li class="nav-item">
           <img
             src="../assets/Images/TeaAna.png"
             alt="Logo"
-            class="img mr-1 img-fluid"
+            class="img img-fluid"
             v-bind:href="homelink"
           />
         </li>
@@ -15,16 +20,8 @@
     <div class="d-flex flex-row order-2 order-lg-3">
       <ul class="navbar-nav flex-row">
         <li class="nav-item">
-          <a class="nav-link mr-2" v-bind:href="shoplink">
-            <i class="fas fa-store"></i>
-            Store
-          </a>
-        </li>
-
-        <li class="nav-item">
           <a class="nav-link mr-2" v-bind:href="cartlink">
             <i class="fas fa-shopping-cart"></i>
-            Cart
           </a>
         </li>
 
@@ -78,24 +75,35 @@
     >
       <ul class="navbar-nav mr-auto text-left">
         <li class="nav-item">
-          <a class="nav-link" href="#banner-section"
-            ><router-link to="/">Home</router-link></a
+          <a class="nav-link"
+            ><router-link to="/" v-scroll-to="'#banner-section'">
+              Home
+            </router-link></a
           >
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#product-category-section"
-            ><router-link to="/#product-category-section">Food</router-link></a
+          <a class="nav-link"
+            ><router-link to="/" v-scroll-to="'#product-section'">
+              Product
+            </router-link></a
           >
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#about-section"
-            ><router-link to="/#about-section">About</router-link></a
+          <a class="nav-link"
+            ><router-link to="/" v-scroll-to="'#about-section'">
+              About
+            </router-link></a
           >
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#contact-section"
-            ><router-link to="/#contact-section">Contact</router-link></a
+          <a class="nav-link"
+            ><router-link to="/" v-scroll-to="'#contact-section'">
+              Contact
+            </router-link></a
           >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link mr-2" v-bind:href="shoplink"> store </a>
         </li>
       </ul>
     </div>
@@ -103,6 +111,7 @@
 </template>
 
 <script>
+/* import $ from "jquery"; */
 import axios from "axios";
 //allows cookies
 axios.defaults.withCredentials = true;
@@ -139,6 +148,26 @@ export default {
   },
   mounted() {
     this.getProfile();
+
+    /*  function smooth_scroll_to(elem) {
+      var offset = 1500;
+
+      offset = $(elem).offset().top - 60;
+
+      $("html, body").animate(
+        {
+          scrollTop: offset,
+        },
+        500,
+        "swing"
+      );
+    }
+
+    $(".nav ul li a").click(function (e) {
+      e.preventDefault();
+      var elem = $(this).attr("href");
+      smooth_scroll_to(elem);
+    }); */
   },
 };
 </script>

@@ -1,5 +1,5 @@
 <template>
-  <section id="banner-section" class="container-fluid p-0">
+  <section class="container-fluid p-0">
     <div
       class="landing vh-auto d-flex justify-content-center col-lg-12 col-md-12 wrap"
     >

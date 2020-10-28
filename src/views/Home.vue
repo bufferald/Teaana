@@ -1,11 +1,11 @@
 <template>
   <div>
-    <Landing />
+    <Landing id="banner-section" />
     <Login />
     <Register />
-    <Product />
-    <Gallery />
-    <Contact />
+    <Product id="product-section" />
+    <Gallery id="about-section" />
+    <Contact id="contact-section" />
     <Footer />
     <PrivacyPolicy />
     <RefundPolicy />
@@ -23,8 +23,8 @@ import Footer from "@/components/NavFooter.vue";
 import PrivacyPolicy from "@/components/PrivacyPolicy.vue";
 import RefundPolicy from "@/components/RefundPolicy.vue";
 import TermsandConditions from "@/components/TermsCondition.vue";
-import $ from "jquery";
-export default {
+/* import $ from "jquery";
+ */ export default {
   mounted() {
     // https://twitter.com/uixmat
     /* 
@@ -57,26 +57,6 @@ export default {
         }
       });
     } */
-
-    function smooth_scroll_to(elem) {
-      var offset = 1500;
-
-      offset = $(elem).offset().top - 60;
-
-      $("html, body").animate(
-        {
-          scrollTop: offset,
-        },
-        500,
-        "swing"
-      );
-    }
-
-    $(".nav ul li a").click(function (e) {
-      e.preventDefault();
-      var elem = $(this).attr("href");
-      smooth_scroll_to(elem);
-    });
   },
   components: {
     Landing,

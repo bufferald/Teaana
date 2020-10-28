@@ -5,12 +5,8 @@
         <div class="col-lg-3 col-sm-6 infos">
           <h4 style="color: #666666">Contacts</h4>
           <ul class="list-group border-0">
-            <li class="list-group-item">
-              5th Floorm 7844 Mavenue Building 1210 Makati Ave.
-            </li>
             <li class="list-group-item">Sales@tea-ana.com</li>
             <li class="list-group-item">09270244269</li>
-            <li class="list-group-item">Opens at 10am - 7pm</li>
           </ul>
         </div>
         <div class="col-lg-3 col-sm-6 disclaimer">
@@ -56,11 +52,12 @@
                   ><i class="fab fa-facebook-square"></i
                 ></a>
               </li>
-              <li class="list-inline-item">
+              <!--              <li class="list-inline-item">
                 <a class="nav-link" v-bind:href="linktwitter">
                   <i class="fab fa-twitter-square"></i>
                 </a>
               </li>
+  -->
               <li class="list-inline-item">
                 <a class="nav-link" v-bind:href="linkinstagram">
                   <i class="fab fa-instagram-square"></i>
@@ -85,7 +82,7 @@
 export default {
   data() {
     return {
-      linkfacebook: "https://www.facebook.com/TeaAna2",
+      linkfacebook: "https://www.facebook.com/TeaAna20",
       linktwitter: "https://twitter.com/search?q=tea%20ana&src=typed_query",
       linkinstagram: "https://www.instagram.com/teaana20/",
     };

@@ -47,7 +47,7 @@
                 class="form-control"
                 placeholder="contact number"
                 id="contactno"
-                v-model="contact"
+                v-model="phone"
               />
             </div>
             <div class="form-group">
@@ -85,8 +85,9 @@ export default {
     return {
       name: "",
       email: "",
-      contact: "",
+
       password: "",
+      phone: "",
       url: "https://api.tea-ana.com/v1/auth",
     };
   },
@@ -97,7 +98,7 @@ export default {
           name: this.name,
           email: this.email,
           password: this.password,
-          contact: this.contact,
+          phone: this.phone,
         });
         console.log(res.data);
       } catch (error) {

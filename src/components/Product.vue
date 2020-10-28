@@ -1,6 +1,6 @@
 <template>
-  <section id="product-category-section" class="product container-fluid p-0">
-    <div class="header-msg vh-auto w-100 p-5">
+  <section class="product container-fluid p-0">
+    <div class="header-msg vh-auto w-100">
       <h1 class="font-weight-bold m-auto text-center" data-aos="fade-up">
         Start your Day with a soothing taste of
         <strong>Milktea</strong> &
@@ -56,13 +56,13 @@
           </div>
         </div>
       </div>
-
+      <!-- 
       <button
         class="btn btn-sm procceed-to-shop pl-3 pr-3"
         style="background-color: #028476; border-radius: 20px"
       >
         <a class="navlink text-white" href="/shop">Order now</a>
-      </button>
+      </button> -->
     </div>
   </section>
 </template>

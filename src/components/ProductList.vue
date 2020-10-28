@@ -72,7 +72,7 @@
               data-target="#product-cart"
               class="align-self-center float-right p-0 btn btn-md"
               style="color: #5cd85c"
-              @click="addcart(product)"
+              @click="addCart()"
             >
               <i class="fas fa-shopping-cart"></i>
             </button>
@@ -115,8 +115,8 @@
                       readonly
                       class="form-control text-center bg-white font-weight-bold"
                       style="color: #028476; border: none"
-                      placeholder="Username"
-                      aria-label="Username"
+                      placeholder="Product name"
+                      aria-label="Name"
                       aria-describedby="basic-addon1"
                       v-model="input.name"
                     />
@@ -339,6 +339,7 @@ export default {
       sort: null,
       products: [],
       pagination: [],
+      eachproduct: [],
 
       //File Path
       path: "https://api.tea-ana.com/uploads/",
@@ -384,26 +385,24 @@ export default {
   methods: {
     async getProducts() {
       let response = await axios.get(
-        "https://api.tea-ana.com/v1/products?select=name,price,productType,imagePath,category_id"
+        "https://api.tea-ana.com/v1/products?select=name,price,productType,imagePath,category_id" //endpoint
       );
       this.products = response.data.data;
       console.log(this.products);
     },
-    addcart: function (product) {
-      (this.movetocartbtn = true),
-        (this.input.id = product.id),
-        (this.input.name = product.name),
-        (this.input.price = product.price),
-        (this.input.size = product.size),
-        (this.input.sugarlevel = product.sugarlevel);
-    },
-    totalpricep: function () {
-      this.input.price + this.sizeopt.value;
+    async addCart() {
+      axios
+        .get(`https://api.tea-ana.com/v1/products/${this.eachproduct.id}`)
+        .then((response) => {
+          console.log(response);
+          this.eachproduct = response.data;
+        });
     },
   },
 
   async created() {
     this.getProducts();
+    this.addCart();
   },
   computed: {
     filter() {

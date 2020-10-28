@@ -319,7 +319,7 @@
               <div class="input-group mb-3">
                 <input
                   type="submit"
-                  value="Submit Payment"
+                  value="Check out"
                   class="btn btn-sm mx-auto w-50 border-0 text-white"
                   style="background-color: #028476"
                 />

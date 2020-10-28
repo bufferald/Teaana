@@ -28,7 +28,7 @@ const routes = [
 
 	},
 	{
-		path: '/#contact-section',
+		path: '#contact-section',
 		name: 'contact',
 		component: Contact
 
